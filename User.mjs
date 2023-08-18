@@ -9,7 +9,7 @@ export class User{
 
     read = (req,res) => res.send(this.users)
     login = (req,res) => {
-        const user = res.send(this.users.find(u => u.contact === req.body.contact && u.password === req.body.password))
+        const user = this.users.find(u => u.contact === req.body.contact && u.password === req.body.password)
         if(user){
             res.status(200).send({
                 bsuccess : true,
